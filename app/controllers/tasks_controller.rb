@@ -37,6 +37,7 @@ class TasksController < ApplicationController
       flash.now[:danger] = 'Task は更新されませんでした'
       render :edit
     end
+    end
 
     def destroy
         @task = Task.find(params[:id])
@@ -52,4 +53,5 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:content)
   end
+  
 end
